@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:sushi_restaurant/components/button.dart';
 
 class Intro extends StatefulWidget {
   const Intro({super.key});
@@ -20,10 +20,11 @@ class _IntroState extends State<Intro> {
           children: [
             const SizedBox(height: 20.0),
 
-            Text(
-              "Sushi Man",
-              style: GoogleFonts.dmSerifDisplay(
-                fontSize: 25.0,
+            const Text(
+              "Sushi Restaurant",
+              style: TextStyle(
+                fontFamily: 'DM Serif Display',
+                fontSize: 40.0,
                 color: Colors.white
               )
             ),
@@ -33,25 +34,30 @@ class _IntroState extends State<Intro> {
               child: Image.asset('assets/images/salmon_eggs.png'),
             ),
 
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 30.0),
 
-             Text(
-              "The flavors of Japanese cuisine.",
-              style: GoogleFonts.dmSerifDisplay( 
-                fontSize: 25.0,
+             const Text(
+              "THE FLAVORS OF JAPANESE CUISINE.",
+              style: TextStyle(
+                fontFamily: 'DM Serif Display',
+                fontSize: 30.0,
                 color: Colors.white
               )
             ),
 
             const SizedBox(height: 10.0),
 
-             const Text(
+             Text(
               "Experience the tasty essence of popular Japanese cuisine that's available worldwide, making every bite a flavorful journey without limits.",
               style: TextStyle(
-                fontSize: 25.0,
-                color: Colors.grey
+                color: Colors.grey[200]
               )
             ),
+
+
+            const SizedBox(height: 40.0),
+
+            const Button(text: "Get Started")
           ],
         ),
       ),
