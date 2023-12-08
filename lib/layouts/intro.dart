@@ -58,7 +58,10 @@ class _IntroState extends State<Intro> {
 
             const SizedBox(height: 40.0),
 
-            const Button(text: "Get Started")
+            const Button(
+              text: "Get Started",
+              // onTap: Navigator.pushNamed(context, Menu),
+            )
           ],
         ),
       ),
