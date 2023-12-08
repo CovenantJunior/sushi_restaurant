@@ -7,12 +7,12 @@ class Button extends StatelessWidget {
     super.key,
     required this.text,
     this.onTap
-  });
+    });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => onTap,
+      onTap: onTap,
       child: Container(
         padding: const EdgeInsets.all(20.0),
         decoration: BoxDecoration(
