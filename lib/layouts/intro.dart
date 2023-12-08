@@ -17,6 +17,7 @@ class _IntroState extends State<Intro> {
         padding: const EdgeInsets.all(25.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const SizedBox(height: 20.0),
 
