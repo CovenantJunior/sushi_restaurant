@@ -9,7 +9,7 @@ class Button extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
-        color: Color.fromARGB(212, 135, 81, 77),
+        color: const Color.fromARGB(212, 135, 81, 77),
         borderRadius: BorderRadius.circular(50)
       ),
       child: Row(
