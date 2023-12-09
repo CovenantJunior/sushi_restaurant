@@ -15,8 +15,10 @@ class Menu extends StatelessWidget {
         title: const Text(
           'Menus',
           style: TextStyle(
-            color: Color.fromARGB(255, 138, 60, 55),
-          ),
+              fontFamily: 'DM Serif Display',
+              fontSize: 40.0,
+              color: Colors.white
+            ),
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[300],
