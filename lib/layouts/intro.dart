@@ -55,20 +55,16 @@ class _IntroState extends State<Intro> {
                   color: Colors.grey[200]
                 )
               ),
-          
-          
-              const SizedBox(height: 40.0),
-          
-              Button(
-                text: "Get Started",
-                onTap: () {
-                  Navigator.pushNamed(context, '/menu');
-                },
-              )
             ],
           ),
         ),
       ),
+      bottomNavigationBar: Button(
+                text: "Get Started",
+                onTap: () {
+                  Navigator.pushNamed(context, '/menu');
+                },
+              ),
     );
   }
 }

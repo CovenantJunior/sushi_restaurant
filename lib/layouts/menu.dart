@@ -16,7 +16,7 @@ class Menu extends StatelessWidget {
           'Menus',
           style: TextStyle(
             fontFamily: 'DM Serif Display',
-            fontSize: 40.0,
+            fontSize: 30.0,
             color: Color.fromARGB(255, 138, 60, 55),
           ),
         ),
