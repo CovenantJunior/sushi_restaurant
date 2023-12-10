@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:sushi_restaurant/components/button.dart';
+import 'package:sushi_restaurant/themes/colors.dart';
 
 class Menu extends StatelessWidget {
   const Menu({super.key});
@@ -13,7 +15,7 @@ class Menu extends StatelessWidget {
           color: Color.fromARGB(255, 138, 60, 55),
         ),
         title: const Text(
-          'Menus',
+          'Tokyo',
           style: TextStyle(
             fontFamily: 'DM Serif Display',
             fontSize: 30.0,
@@ -22,6 +24,59 @@ class Menu extends StatelessWidget {
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[300],
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.fromLTRB(20.0,20.0,0,0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Center(
+                            child: Text(
+                              "Buy at 30% Off",
+                              style: TextStyle(
+                                fontFamily: 'DM Serif Display',
+                                fontSize: 25.0,
+                                color: Colors.white
+                              )
+                            ),
+                          ),
+                                
+                          SizedBox(height: 10),
+                      
+                          Center(
+                            child: Button(
+                              text: "Get Offer",
+                              onTap: null,
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(40.0,0,40.0,0),
+                      child: Image.asset(
+                        'images/more_sushis.png',
+                        height: 100,
+                      ),
+                    )
+                  ],
+                ),
+              )
+            ],
+          ),
         ),
     );
   }
