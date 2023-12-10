@@ -11,8 +11,8 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BottomAppBar(
-      color: Colors.transparent,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
       child: GestureDetector(
         onTap: onTap,
         child: Container(

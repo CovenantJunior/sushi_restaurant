@@ -14,7 +14,7 @@ class _IntroState extends State<Intro> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 138, 60, 55),
       body: Padding(
-        padding: const EdgeInsets.all(25.0),
+        padding: const EdgeInsets.fromLTRB(25.0,25.0,25.0,0.0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,11 +60,11 @@ class _IntroState extends State<Intro> {
         ),
       ),
       bottomNavigationBar: Button(
-                text: "Get Started",
-                onTap: () {
-                  Navigator.pushNamed(context, '/menu');
-                },
-              ),
+        text: "Get Started",
+        onTap: () {
+          Navigator.pushNamed(context, '/menu');
+        },
+      ),
     );
   }
 }
