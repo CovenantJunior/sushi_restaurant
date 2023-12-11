@@ -26,8 +26,9 @@ class Menu extends StatelessWidget {
         backgroundColor: Colors.grey[300],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(20.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
                 decoration: BoxDecoration(
@@ -74,6 +75,35 @@ class Menu extends StatelessWidget {
                     )
                   ],
                 ),
+              ),
+
+              const SizedBox(height: 20.0,),
+
+               TextField(
+                 decoration: InputDecoration(
+                   border: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: primaryColor
+                    ),
+                     borderRadius: BorderRadius.circular(15)
+                   )
+                 ),
+               ),
+
+               const SizedBox(height: 20.0),
+
+              Row(
+                children: [
+                  Text(
+                    "Menu List",
+                    style: TextStyle(
+                      fontFamily: 'DM Serif Display',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                      color: primaryColor
+                    ),
+                  ),
+                ],
               )
             ],
           ),
