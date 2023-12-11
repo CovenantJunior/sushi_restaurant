@@ -86,6 +86,18 @@ class Menu extends StatelessWidget {
                       color: primaryColor
                     ),
                      borderRadius: BorderRadius.circular(15)
+                   ),
+                   enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(
+                        color: primaryColor
+                      ),
+                      borderRadius: BorderRadius.circular(15)
+                   ),
+                   focusedBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Colors.grey
+                      ),
+                      borderRadius: BorderRadius.circular(15)
                    )
                  ),
                ),
