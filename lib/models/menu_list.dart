@@ -1,10 +1,10 @@
-class FoodItem {
+class MenuList {
   late String name;
   late String price;
   late String imagePath;
   late int rating;
   
-  FoodItem({
+  MenuList({
     required name,
     required price,
     required imagePath,
