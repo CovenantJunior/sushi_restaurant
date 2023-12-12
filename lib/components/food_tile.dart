@@ -20,6 +20,7 @@ class FoodTile extends StatelessWidget {
           borderRadius: BorderRadius.circular(20)
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset(
               food.imagePath,
