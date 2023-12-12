@@ -12,46 +12,62 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      margin: const EdgeInsets.only(right: 20.0),
       padding: const EdgeInsets.all(20.0),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.grey[100],
-          borderRadius: BorderRadius.circular(20)
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Image.asset(
-              food.imagePath,
-              height: 150,
+      decoration: BoxDecoration(
+        color: Colors.grey[100],
+        borderRadius: BorderRadius.circular(20)
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          Image.asset(
+            food.imagePath,
+            height: 150,
+          ),
+            
+          Text(
+            food.name,
+            style: const TextStyle(
+              fontFamily: 'DM Serif Display',
+              fontSize: 20
             ),
-      
-            Text(
-              food.name,
-              style: const TextStyle(
-                fontFamily: 'DM Serif Display',
-                fontSize: 20
-              ),
+          ),
+            
+          SizedBox(
+            width: 160.0,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text(
+                  food.price,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold
+                  ),
+                ),
+            
+                const SizedBox(height: 20.0),
+            
+                Row(
+                  children: [
+                    Icon(
+                      Icons.star,
+                      color: Colors.yellow[700],
+                    ),
+                    Text(
+                      food.rating,
+                      style: const TextStyle(
+                        color: Colors.grey,
+                        fontWeight: FontWeight.bold
+                      ),
+                    )
+                  ],
+                ),
+              ],
             ),
-      
-            SizedBox(
-              height: 160.0,
-              child: Column(
-                children: [
-                  Text(food.price),
-      
-                  const SizedBox(height: 20.0),
-      
-                  const Icon(Icons.star),
-                  Text(food.rating)
-                ],
-              ),
-            ),
-      
-      
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
