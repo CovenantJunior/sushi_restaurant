@@ -34,7 +34,7 @@ class FoodTile extends StatelessWidget {
 
           SizedBox(
             height: 160.0,
-            child: Row(
+            child: Column(
               children: [
                 Text(food.price),
 
