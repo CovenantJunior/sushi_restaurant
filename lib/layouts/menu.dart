@@ -18,25 +18,25 @@ class _MenuState extends State<Menu> {
       name: 'More Sushis',
       price: '\$12.99',
       imagePath: 'images/more_sushis.png',
-      rating: 4.0,
+      rating: "4.0",
     ),
     MenuList(
       name: 'Salmon Eggs',
       price: '\$9.99',
       imagePath: 'images/salmon_eggs.png',
-      rating: 5.0,
+      rating: "5.0",
     ),
     MenuList(
       name: 'Sushi',
       price: '\$10.50',
       imagePath: 'images/sushi.png',
-      rating: 4.5,
+      rating: "4.5",
     ),
     MenuList(
       name: 'Tuna',
       price: '\$11.75',
       imagePath: 'images/tuna.png',
-      rating: 4.2,
+      rating: "4.2",
     ),
     // Add more MenuList objects as needed
   ];

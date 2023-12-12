@@ -3,7 +3,7 @@ class MenuList {
   late String name;
   late String price;
   late String imagePath;
-  late double rating;
+  late String rating;
   
   MenuList({
     required this.name,
@@ -15,5 +15,5 @@ class MenuList {
   String get _name => name;
   String get _price => price;
   String get _imagePath => imagePath;
-  double get _rating => rating;
+  String get _rating => rating;
 }
