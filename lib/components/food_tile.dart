@@ -12,42 +12,45 @@ class FoodTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.grey[100],
-        borderRadius: BorderRadius.circular(20)
-      ),
-      child: Column(
-        children: [
-          Image.asset(
-            food.imagePath,
-            height: 150,
-          ),
-
-          Text(
-            food.name,
-            style: const TextStyle(
-              fontFamily: 'DM Serif Display',
-              fontSize: 20
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.grey[100],
+          borderRadius: BorderRadius.circular(20)
+        ),
+        child: Column(
+          children: [
+            Image.asset(
+              food.imagePath,
+              height: 150,
             ),
-          ),
-
-          SizedBox(
-            height: 160.0,
-            child: Column(
-              children: [
-                Text(food.price),
-
-                const SizedBox(height: 20.0),
-
-                const Icon(Icons.star),
-                Text(food.rating)
-              ],
+      
+            Text(
+              food.name,
+              style: const TextStyle(
+                fontFamily: 'DM Serif Display',
+                fontSize: 20
+              ),
             ),
-          ),
-
-
-        ],
+      
+            SizedBox(
+              height: 160.0,
+              child: Column(
+                children: [
+                  Text(food.price),
+      
+                  const SizedBox(height: 20.0),
+      
+                  const Icon(Icons.star),
+                  Text(food.rating)
+                ],
+              ),
+            ),
+      
+      
+          ],
+        ),
       ),
     );
   }
