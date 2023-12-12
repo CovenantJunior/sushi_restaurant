@@ -1,9 +1,45 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_restaurant/components/button.dart';
+import 'package:sushi_restaurant/components/food_tile.dart';
+import 'package:sushi_restaurant/models/menu_list.dart';
 import 'package:sushi_restaurant/themes/colors.dart';
 
-class Menu extends StatelessWidget {
+class Menu extends StatefulWidget {
   const Menu({super.key});
+
+  @override
+  State<Menu> createState() => _MenuState();
+}
+
+class _MenuState extends State<Menu> {
+  
+  List<MenuList> menus = [
+    MenuList(
+      name: 'More Sushis',
+      price: '\$12.99',
+      imagePath: 'images/more_sushis.png',
+      rating: 4.0,
+    ),
+    MenuList(
+      name: 'Salmon Eggs',
+      price: '\$9.99',
+      imagePath: 'images/salmon_eggs.png',
+      rating: 5.0,
+    ),
+    MenuList(
+      name: 'Sushi',
+      price: '\$10.50',
+      imagePath: 'images/sushi.png',
+      rating: 4.5,
+    ),
+    MenuList(
+      name: 'Tuna',
+      price: '\$11.75',
+      imagePath: 'images/tuna.png',
+      rating: 4.2,
+    ),
+    // Add more MenuList objects as needed
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +131,7 @@ class Menu extends StatelessWidget {
                    ),
                    focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Colors.grey
+                        color: Colors.white
                       ),
                       borderRadius: BorderRadius.circular(15)
                    )
@@ -116,6 +152,18 @@ class Menu extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+
+              const SizedBox(height: 20.0),
+
+              Expanded(
+                child: ListView.builder(
+                  // scrollDirection: Axis.horizontal,
+                  itemCount: menus.length,
+                  itemBuilder: (context, index) => FoodTile(
+                    food: menus[index]
+                  ),
+                )
               )
             ],
           ),
