@@ -158,7 +158,7 @@ class _MenuState extends State<Menu> {
 
               Expanded(
                 child: ListView.builder(
-                  // scrollDirection: Axis.horizontal,
+                  scrollDirection: Axis.horizontal,
                   itemCount: menus.length,
                   itemBuilder: (context, index) => FoodTile(
                     food: menus[index]
