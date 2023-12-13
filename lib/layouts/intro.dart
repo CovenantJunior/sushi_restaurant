@@ -33,7 +33,7 @@ class _IntroState extends State<Intro> {
           
               Padding(
                 padding: const EdgeInsets.all(10.0),
-                child: Image.asset('assets/images/salmon_eggs.png'),
+                child: Image.asset('images/salmon_eggs.png'),
               ),
           
               const SizedBox(height: 30.0),
