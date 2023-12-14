@@ -165,7 +165,8 @@ class _MenuState extends State<Menu> {
                   scrollDirection: Axis.horizontal,
                   itemCount: menus.length,
                   itemBuilder: (context, index) => FoodTile(
-                    food: menus[index]
+                    food: menus[index],
+                    onTap: () => print("User chose ${menus[index].name}")
                   ),
                 )
               ),

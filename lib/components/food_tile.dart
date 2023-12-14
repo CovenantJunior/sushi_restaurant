@@ -14,7 +14,7 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: null,
+      onTap: onTap,
       child: Container(
         margin: const EdgeInsets.only(right: 20.0),
         padding: const EdgeInsets.all(10.0),
