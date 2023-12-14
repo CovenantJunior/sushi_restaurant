@@ -117,6 +117,10 @@ class _MenuState extends State<Menu> {
 
                TextField(
                  decoration: InputDecoration(
+                  hintStyle: const TextStyle(
+                    fontFamily: "DM Serif Display"
+                  ),
+                  hintText: "Search",
                    border: OutlineInputBorder(
                     borderSide: BorderSide(
                       color: primaryColor
@@ -154,16 +158,86 @@ class _MenuState extends State<Menu> {
                 ],
               ),
 
-              const SizedBox(height: 20.0),
+              const SizedBox(height: 10.0),
 
               Expanded(
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: menus.length,
                   itemBuilder: (context, index) => FoodTile(
-                    food: menus[index]
+                    food: menus[index],
+                    onTap: null
                   ),
                 )
+              ),
+
+              const SizedBox(height: 25),
+
+              Row(
+                children: [
+                  Text(
+                    "Favorite",
+                    style: TextStyle(
+                      fontFamily: 'DM Serif Display',
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20.0,
+                      color: primaryColor
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 10),
+
+              Container(
+                padding: const EdgeInsets.all(10.0),
+                decoration: BoxDecoration(
+                  color: Colors.grey[100],
+                  borderRadius: BorderRadius.circular(20)
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.asset(
+                          'images/salmon_eggs.png',
+                          height: 100,
+                        ),
+                        
+                        const SizedBox(width: 20),
+                        
+                        const Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              "Salmon Eggs",
+                              style: TextStyle(
+                                fontFamily: 'DM Serif Display',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20.0,
+                              ),
+                            ),
+                        
+                            Text(
+                              "\$25",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+
+                    const Icon(
+                      Icons.favorite,
+                      color: Colors.red,
+                    )
+                  ],
+                ),
               )
             ],
           ),
