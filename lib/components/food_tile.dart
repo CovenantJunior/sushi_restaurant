@@ -13,6 +13,7 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 100,
       margin: const EdgeInsets.only(right: 20.0),
       padding: const EdgeInsets.all(20.0),
       decoration: BoxDecoration(
