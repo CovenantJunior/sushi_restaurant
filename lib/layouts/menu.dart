@@ -15,36 +15,37 @@ class Menu extends StatefulWidget {
 class _MenuState extends State<Menu> {
   
   List<MenuList> menus = [
-    MenuList(
-      name: 'More Sushis',
-      price: '\$12.99',
-      imagePath: 'images/more_sushis.png',
-      rating: "4.0",
-      desc: ""
-    ),
-    MenuList(
-      name: 'Salmon Eggs',
-      price: '\$9.99',
-      imagePath: 'images/salmon_eggs.png',
-      rating: "5.0",
-      desc: "Indulge in the ocean's finest treasure with our Salmon Eggs Delight, featuring premium-grade ikura harvested from the freshest salmon. These glistening, vibrant orbs offer a burst of oceanic flavors and a delightful texture that tantalizes the palate.\r\n\r\nSavor the exquisite brininess and subtle sweetness of our hand-picked salmon roe, encapsulated within delicate clusters. Each pop reveals a luscious, velvety texture and a satisfying burst of umami, elevating your culinary experience.",
-    ),
-    MenuList(
-      name: 'Sushi',
-      price: '\$10.50',
-      imagePath: 'images/sushi.png',
-      rating: "4.5",
-      desc: ""
-    ),
-    MenuList(
-      name: 'Tuna',
-      price: '\$11.75',
-      imagePath: 'images/tuna.png',
-      rating: "4.2",
-      desc: ""
-    ),
-    // Add more MenuList objects as needed
-  ];
+  MenuList(
+    name: 'More Sushis',
+    price: '\$12.99',
+    imagePath: 'images/more_sushis.png',
+    rating: "4.0",
+    desc: "Experience an assortment of delectable sushi variations with our More Sushis platter. Delight in a fusion of flavors and textures meticulously crafted to satisfy your cravings. Each piece showcases the perfect balance of fresh ingredients, offering a burst of savory and umami goodness in every bite. Elevate your dining experience with this diverse and tantalizing sushi selection."
+  ),
+  MenuList(
+    name: 'Salmon Eggs',
+    price: '\$9.99',
+    imagePath: 'images/salmon_eggs.png',
+    rating: "5.0",
+    desc: "Indulge in the ocean's finest treasure with our Salmon Eggs Delight, featuring premium-grade ikura harvested from the freshest salmon. These glistening, vibrant orbs offer a burst of oceanic flavors and a delightful texture that tantalizes the palate. Savor the exquisite brininess and subtle sweetness of our hand-picked salmon roe, encapsulated within delicate clusters. Each pop reveals a luscious, velvety texture and a satisfying burst of umami, elevating your culinary experience."
+  ),
+  MenuList(
+    name: 'Sushi',
+    price: '\$10.50',
+    imagePath: 'images/sushi.png',
+    rating: "4.5",
+    desc: "Dive into a world of traditional Japanese flavors with our exquisite Sushi assortment. Crafted with precision and finesse, each piece embodies authenticity and culinary excellence. Revel in the harmonious blend of vinegared rice, fresh seafood, and delicate seaweed. Our Sushi promises a symphony of tastes and textures that will transport you to the heart of Japan’s culinary culture."
+  ),
+  MenuList(
+    name: 'Tuna',
+    price: '\$11.75',
+    imagePath: 'images/tuna.png',
+    rating: "4.2",
+    desc: "Satisfy your cravings with our premium Tuna selections, meticulously curated to offer the finest dining experience. Immerse yourself in the rich flavors and buttery texture of fresh, succulent tuna. Each bite delivers a burst of oceanic goodness, perfectly complemented by its tender texture. Indulge in the essence of the sea with our handpicked Tuna varieties."
+  ),
+  // Add more MenuList objects as needed
+];
+
 
   void navigateToFoodDetail(int index) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetails(
