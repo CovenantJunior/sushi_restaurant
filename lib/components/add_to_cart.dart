@@ -57,6 +57,31 @@ class _AddToCartState extends State<AddToCart> {
 
                 const SizedBox(width: 10),
 
+                Container(
+                  decoration: BoxDecoration(
+                    color: secondaryColor,
+                    borderRadius: BorderRadius.circular(50)
+                  ),
+                  child: IconButton(
+                    onPressed: decrement,
+                    icon: const Icon(
+                      Icons.remove,
+                      color: Colors.white,
+                    )
+                  ),
+                ),
+
+                const SizedBox(width: 10),
+
+                 Text(
+                  "$amount",
+                  style: const TextStyle(
+                    color: Colors.white
+                  ),
+                 ),
+
+                const SizedBox(width: 10),
+                
                  Container(
                   decoration: BoxDecoration(
                     color: secondaryColor,
@@ -70,31 +95,6 @@ class _AddToCartState extends State<AddToCart> {
                     )
                   ),
                  ),
-
-                 const SizedBox(width: 10),
-
-                 Text(
-                  "$amount",
-                  style: const TextStyle(
-                    color: Colors.white
-                  ),
-                 ),
-
-                const SizedBox(width: 10),
-                
-                Container(
-                  decoration: BoxDecoration(
-                    color: secondaryColor,
-                    borderRadius: BorderRadius.circular(50)
-                  ),
-                  child: IconButton(
-                    onPressed: decrement,
-                    icon: const Icon(
-                      Icons.remove,
-                      color: Colors.white,
-                    )
-                  ),
-                )
               ],
             )
           ],
