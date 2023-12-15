@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sushi_restaurant/components/button.dart';
 import 'package:sushi_restaurant/components/food_tile.dart';
+import 'package:sushi_restaurant/layouts/food_details.dart';
 import 'package:sushi_restaurant/models/menu_list.dart';
 import 'package:sushi_restaurant/themes/colors.dart';
 
@@ -40,6 +41,12 @@ class _MenuState extends State<Menu> {
     ),
     // Add more MenuList objects as needed
   ];
+
+  void navigateToFoodDetail(int index) {
+    Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetails(
+      food: menus[index],
+    )));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +174,7 @@ class _MenuState extends State<Menu> {
                   itemCount: menus.length,
                   itemBuilder: (context, index) => FoodTile(
                     food: menus[index],
-                    onTap: () => print("User chose ${menus[index].name}")
+                    onTap: () => navigateToFoodDetail(index)
                   ),
                 )
               ),
