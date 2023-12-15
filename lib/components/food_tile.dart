@@ -27,7 +27,7 @@ class FoodTile extends StatelessWidget {
           children: [
             Image.asset(
               food.imagePath,
-              height: 150,
+              height: 110,
             ),
               
             Text(

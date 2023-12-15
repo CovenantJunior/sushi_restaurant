@@ -46,6 +46,7 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        toolbarHeight: 50,
         leading: const Icon(
           Icons.menu,
           color: Color.fromARGB(255, 138, 60, 55),
@@ -62,7 +63,7 @@ class _MenuState extends State<Menu> {
         backgroundColor: Colors.grey[300],
         ),
         body: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.fromLTRB(20.0,0.0,20.0,20.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -113,7 +114,7 @@ class _MenuState extends State<Menu> {
                 ),
               ),
 
-              const SizedBox(height: 20.0,),
+              const SizedBox(height: 10.0,),
 
                TextField(
                  decoration: InputDecoration(
@@ -142,7 +143,7 @@ class _MenuState extends State<Menu> {
                  ),
                ),
 
-               const SizedBox(height: 20.0),
+               const SizedBox(height: 10.0),
 
               Row(
                 children: [
@@ -171,7 +172,7 @@ class _MenuState extends State<Menu> {
                 )
               ),
 
-              const SizedBox(height: 25),
+              const SizedBox(height: 10),
 
               Row(
                 children: [
@@ -204,7 +205,7 @@ class _MenuState extends State<Menu> {
                       children: [
                         Image.asset(
                           'images/salmon_eggs.png',
-                          height: 100,
+                          height: 60,
                         ),
                         
                         const SizedBox(width: 20),
