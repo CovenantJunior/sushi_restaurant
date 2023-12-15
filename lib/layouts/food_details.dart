@@ -89,7 +89,7 @@ class FoodDetails extends StatelessWidget {
                     const SizedBox(height: 20),
                 
                     Text(
-                      "Indulge in the ocean's finest treasure with our Salmon Eggs Delight, featuring premium-grade ikura harvested from the freshest salmon. These glistening, vibrant orbs offer a burst of oceanic flavors and a delightful texture that tantalizes the palate.\r\n\r\nSavor the exquisite brininess and subtle sweetness of our hand-picked salmon roe, encapsulated within delicate clusters. Each pop reveals a luscious, velvety texture and a satisfying burst of umami, elevating your culinary experience.",
+                      food.desc,
                       style: TextStyle(
                         color: Colors.grey[600],
                         fontWeight: FontWeight.bold,

@@ -20,24 +20,28 @@ class _MenuState extends State<Menu> {
       price: '\$12.99',
       imagePath: 'images/more_sushis.png',
       rating: "4.0",
+      desc: ""
     ),
     MenuList(
       name: 'Salmon Eggs',
       price: '\$9.99',
       imagePath: 'images/salmon_eggs.png',
       rating: "5.0",
+      desc: "Indulge in the ocean's finest treasure with our Salmon Eggs Delight, featuring premium-grade ikura harvested from the freshest salmon. These glistening, vibrant orbs offer a burst of oceanic flavors and a delightful texture that tantalizes the palate.\r\n\r\nSavor the exquisite brininess and subtle sweetness of our hand-picked salmon roe, encapsulated within delicate clusters. Each pop reveals a luscious, velvety texture and a satisfying burst of umami, elevating your culinary experience.",
     ),
     MenuList(
       name: 'Sushi',
       price: '\$10.50',
       imagePath: 'images/sushi.png',
       rating: "4.5",
+      desc: ""
     ),
     MenuList(
       name: 'Tuna',
       price: '\$11.75',
       imagePath: 'images/tuna.png',
       rating: "4.2",
+      desc: ""
     ),
     // Add more MenuList objects as needed
   ];
