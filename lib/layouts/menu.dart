@@ -50,6 +50,7 @@ class _MenuState extends State<Menu> {
   void navigateToFoodDetail(int index) {
     Navigator.push(context, MaterialPageRoute(builder: (context) => FoodDetails(
       food: menus[index],
+      index: index
     )));
   }
 

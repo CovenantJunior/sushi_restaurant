@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sushi_restaurant/components/add_to_cart_button.dart';
 import 'package:sushi_restaurant/themes/colors.dart';
 
 class AddToCart extends StatefulWidget {
@@ -6,10 +7,13 @@ class AddToCart extends StatefulWidget {
 
   @override
   State<AddToCart> createState() => _AddToCartState();
+  
+  final int index;
   final String price;
   const AddToCart({
     super.key,
-    required this.price
+    required this.price,
+    required this.index
   });
 }
 
@@ -38,7 +42,7 @@ class _AddToCartState extends State<AddToCart> {
     return GestureDetector(
       onTap: null,
       child: Container(
-        height: 70,
+        height: 120,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: primaryColor,
@@ -101,7 +105,9 @@ class _AddToCartState extends State<AddToCart> {
                   ],
                 ),
               ],
-            )
+            ),
+
+            AddToCartButton(index: widget.index)
           ],
         ),
       ),

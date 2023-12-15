@@ -5,10 +5,12 @@ import 'package:sushi_restaurant/themes/colors.dart';
 
 class FoodDetails extends StatelessWidget {
   
+  final int index;
   final MenuList food;
   const FoodDetails({
     super.key,
-    required this.food
+    required this.food,
+    required this.index
   });
 
 
@@ -102,7 +104,10 @@ class FoodDetails extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: AddToCart(price: food.price),
+      bottomNavigationBar: AddToCart(
+        price: food.price,
+        index: index
+      ),
     );
   }
 }
