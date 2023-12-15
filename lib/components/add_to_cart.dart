@@ -42,7 +42,7 @@ class _AddToCartState extends State<AddToCart> {
     return GestureDetector(
       onTap: null,
       child: Container(
-        height: 120,
+        height: 130,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: primaryColor,
