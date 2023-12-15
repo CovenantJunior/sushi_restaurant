@@ -23,6 +23,16 @@ class _AddToCartState extends State<AddToCart> {
     });
   }
 
+  void decrement() {
+    amount--;
+    if (amount < 0) {
+      amount = 0;
+    }
+    setState(() {
+      amount = amount;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -77,9 +87,9 @@ class _AddToCartState extends State<AddToCart> {
                     color: secondaryColor,
                     borderRadius: BorderRadius.circular(50)
                   ),
-                  child: const IconButton(
-                    onPressed: null,
-                    icon: Icon(
+                  child: IconButton(
+                    onPressed: decrement,
+                    icon: const Icon(
                       Icons.remove,
                       color: Colors.white,
                     )
