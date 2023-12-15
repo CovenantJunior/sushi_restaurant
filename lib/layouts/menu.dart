@@ -136,7 +136,7 @@ class _MenuState extends State<Menu> {
                    ),
                    focusedBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Colors.white
+                        color: Colors.green
                       ),
                       borderRadius: BorderRadius.circular(15)
                    )
