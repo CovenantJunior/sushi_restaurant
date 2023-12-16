@@ -14,7 +14,7 @@ class AddToCartButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+      padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
       child: GestureDetector(
         onTap: onTap,
         child: Container(
@@ -31,6 +31,13 @@ class AddToCartButton extends StatelessWidget {
                 style: TextStyle(
                   color: Colors.white
                 ),
+              ),
+
+              SizedBox(width: 10),
+
+              Icon(
+                Icons.arrow_forward,
+                color: Colors.white,
               )
             ],
           ),
