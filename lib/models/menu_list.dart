@@ -13,10 +13,4 @@ class MenuList {
     required this.rating,
     required this.desc
   });
-
-  String get _name => name;
-  String get _price => price;
-  String get _imagePath => imagePath;
-  String get _rating => rating;
-  String get _desc => desc;
 }
