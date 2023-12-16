@@ -80,85 +80,87 @@ class _MenuState extends State<Menu> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Container(
+              Expanded(
+                flex: 4,
+                child: Container(
                 decoration: BoxDecoration(
                   color: primaryColor,
                   borderRadius: BorderRadius.circular(20)
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    const Padding(
-                      padding: EdgeInsets.fromLTRB(20.0,20.0,0,0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          Center(
-                            child: Text(
-                              "Buy at 30% Off",
-                              style: TextStyle(
-                                fontFamily: 'DM Serif Display',
-                                fontSize: 25.0,
-                                color: Colors.white
-                              )
-                            ),
+                    const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Center(
+                          child: Text(
+                            "Buy at 30% Off",
+                            style: TextStyle(
+                              fontFamily: 'DM Serif Display',
+                              fontSize: 24.0,
+                              color: Colors.white
+                            )
                           ),
-                                
-                          SizedBox(height: 10),
-                      
-                          Center(
-                            child: Button(
-                              text: "Get Offer",
-                              onTap: null,
-                            ),
-                          )
-                        ],
-                      ),
+                        ),
+                    
+                        Center(
+                          child: Button(
+                            text: "Get Offer",
+                            onTap: null,
+                          ),
+                        )
+                      ],
                     ),
 
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(40.0,0,40.0,0),
-                      child: Image.asset(
-                        'images/more_sushis.png',
-                        height: 100,
-                      ),
+                    Image.asset(
+                      'images/more_sushis.png',
+                      height: 100,
                     )
                   ],
                 ),
               ),
 
+              ),
+
               const SizedBox(height: 10.0,),
 
-               TextField(
-                 decoration: InputDecoration(
-                  hintStyle: const TextStyle(
-                    fontFamily: "DM Serif Display"
-                  ),
-                  hintText: "Search",
-                   border: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: primaryColor
+               Expanded(
+                flex: 2,
+                 child: TextField(
+                   decoration: InputDecoration(
+                    hintStyle: const TextStyle(
+                      fontFamily: "DM Serif Display"
                     ),
-                     borderRadius: BorderRadius.circular(15)
-                   ),
-                   enabledBorder: OutlineInputBorder(
+                    hintText: "Search",
+                     border: OutlineInputBorder(
                       borderSide: BorderSide(
                         color: primaryColor
                       ),
-                      borderRadius: BorderRadius.circular(15)
+                       borderRadius: BorderRadius.circular(15)
+                     ),
+                     enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: primaryColor
+                        ),
+                        borderRadius: BorderRadius.circular(15)
+                     ),
+                     focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Colors.green
+                        ),
+                        borderRadius: BorderRadius.circular(15)
+                     )
                    ),
-                   focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(
-                        color: Colors.green
-                      ),
-                      borderRadius: BorderRadius.circular(15)
-                   )
                  ),
                ),
 
-               const SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
 
-              Row(
+              Expanded(
+                flex: 1,
+                child: Row(
                 children: [
                   Text(
                     "Menu List",
@@ -171,10 +173,12 @@ class _MenuState extends State<Menu> {
                   ),
                 ],
               ),
-
+            ),
+              
               const SizedBox(height: 10.0),
 
               Expanded(
+                flex: 7,
                 child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: menus.length,
@@ -187,70 +191,76 @@ class _MenuState extends State<Menu> {
 
               const SizedBox(height: 10),
 
-              Row(
-                children: [
-                  Text(
-                    "Favorite",
-                    style: TextStyle(
-                      fontFamily: 'DM Serif Display',
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20.0,
-                      color: primaryColor
+              Expanded(
+                child: Row(
+                  children: [
+                    Text(
+                      "Favorite",
+                      style: TextStyle(
+                        fontFamily: 'DM Serif Display',
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20.0,
+                        color: primaryColor
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
 
               const SizedBox(height: 10),
 
-              Container(
-                padding: const EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                  color: Colors.grey[100],
-                  borderRadius: BorderRadius.circular(20)
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Image.asset(
-                          'images/salmon_eggs.png',
-                          height: 60,
-                        ),
-                        
-                        const SizedBox(width: 20),
-                        
-                        const Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              "Salmon Eggs",
-                              style: TextStyle(
-                                fontFamily: 'DM Serif Display',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20.0,
+              Expanded(
+                flex: 3,
+                child: Container(
+                  padding: const EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                    color: Colors.grey[100],
+                    borderRadius: BorderRadius.circular(20)
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'images/salmon_eggs.png',
+                            height: 60,
+                          ),
+                          
+                          const SizedBox(width: 20),
+                          
+                          const Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Salmon Eggs",
+                                style: TextStyle(
+                                  fontFamily: 'DM Serif Display',
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.0,
+                                ),
                               ),
-                            ),
-                        
-                            Text(
-                              "\$25",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
+                          
+                              Text(
+                                "\$25",
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-
-                    const Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
-                  ],
+                            ],
+                          ),
+                        ],
+                      ),
+                
+                      const Icon(
+                        Icons.favorite,
+                        color: Colors.red,
+                      )
+                    ],
+                  ),
                 ),
               )
             ],
