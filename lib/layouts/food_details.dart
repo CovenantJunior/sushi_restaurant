@@ -31,7 +31,7 @@ class FoodDetails extends StatelessWidget {
         )
       ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+        padding: const EdgeInsets.fromLTRB(20, 0, 20, 10),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
