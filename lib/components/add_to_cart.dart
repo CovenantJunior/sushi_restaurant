@@ -43,7 +43,7 @@ class _AddToCartState extends State<AddToCart> {
       onTap: null,
       child: Container(
         height: 130,
-        padding: const EdgeInsets.all(10),
+        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 11.6),
         decoration: BoxDecoration(
           color: primaryColor,
         ),
