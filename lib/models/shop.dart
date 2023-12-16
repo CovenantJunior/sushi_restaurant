@@ -1,0 +1,3 @@
+// ShopList prototype
+class ShopList {
+}
