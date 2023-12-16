@@ -21,19 +21,19 @@ class _AddToCartState extends State<AddToCart> {
   int amount = 0;
 
   void increment() {
-    amount++;
     setState(() {
-      amount = amount;
+      amount++;
     });
   }
 
   void decrement() {
-    amount--;
     if (amount < 0) {
-      amount = 0;
+      return setState(() {
+        amount = 0;
+      });
     }
     setState(() {
-      amount = amount;
+      amount--;
     });
   }
 
