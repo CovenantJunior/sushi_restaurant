@@ -27,13 +27,13 @@ class _AddToCartState extends State<AddToCart> {
   }
 
   void decrement() {
-    if (amount < 0) {
+    if (amount > 0) {
       return setState(() {
-        amount = 0;
+        amount--;
       });
     }
     setState(() {
-      amount--;
+        amount = 0;
     });
   }
 
