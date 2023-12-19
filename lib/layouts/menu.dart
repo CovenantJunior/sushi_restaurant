@@ -50,6 +50,15 @@ class _MenuState extends State<Menu> {
         ),
         centerTitle: true,
         backgroundColor: Colors.grey[300],
+        actions: [
+          IconButton(
+            onPressed: null,
+            icon: Icon(
+              Icons.shopping_cart,
+              color: primaryColor,
+            ),
+          )
+        ],
         ),
         body: Padding(
           padding: const EdgeInsets.fromLTRB(20.0,0.0,20.0,20.0),
