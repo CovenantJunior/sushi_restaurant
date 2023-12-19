@@ -19,7 +19,6 @@ class AddToCartButton extends StatefulWidget {
 
 class _AddToCartButtonState extends State<AddToCartButton> {
   void add(BuildContext context) {
-    print("hi");
     if (widget.quantity > 0) {
       final shop = context.read<ShopList>();
       final menu = shop.menus;
@@ -27,8 +26,25 @@ class _AddToCartButtonState extends State<AddToCartButton> {
 
       showDialog(
         context: context,
-        builder: (context) => const AlertDialog(
-          content: Text("Item added successfully")
+        builder: (context) => AlertDialog(
+          content: const Text(
+            "Item added successfully",
+            textAlign: TextAlign.center,
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                // Close dialog
+                Navigator.pop(context);
+
+                // Return to Menu Lists
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.done
+              ),
+            ),
+          ],
         ) 
       );
     }
@@ -39,7 +55,7 @@ class _AddToCartButtonState extends State<AddToCartButton> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
       child: GestureDetector(
-        onTap: () => add(conte),
+        onTap: () => add(context),
         child: Container(
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(
