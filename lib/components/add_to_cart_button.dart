@@ -27,9 +27,13 @@ class _AddToCartButtonState extends State<AddToCartButton> {
       showDialog(
         context: context,
         builder: (context) => AlertDialog(
+          backgroundColor: primaryColor,
           content: const Text(
             "Item added successfully",
             textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white
+            ),
           ),
           actions: [
             IconButton(
@@ -41,7 +45,8 @@ class _AddToCartButtonState extends State<AddToCartButton> {
                 Navigator.pop(context);
               },
               icon: const Icon(
-                Icons.done
+                Icons.done,
+                color: Colors.white
               ),
             ),
           ],
