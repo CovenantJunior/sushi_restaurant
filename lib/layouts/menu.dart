@@ -35,17 +35,16 @@ class _MenuState extends State<Menu> {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[300],
       appBar: AppBar(
+        foregroundColor: primaryColor,
         toolbarHeight: 50,
         leading: const Icon(
-          Icons.menu,
-          color: Color.fromARGB(255, 138, 60, 55),
+          Icons.menu,          
         ),
         title: const Text(
           'Tokyo',
           style: TextStyle(
             fontFamily: 'DM Serif Display',
-            fontSize: 30.0,
-            color: Color.fromARGB(255, 138, 60, 55),
+            fontSize: 30.0,            
           ),
         ),
         centerTitle: true,
@@ -55,9 +54,8 @@ class _MenuState extends State<Menu> {
             onPressed: () {
               Navigator.pushNamed(context, '/cart');
             },
-            icon: Icon(
-              Icons.shopping_cart,
-              color: primaryColor,
+            icon: const Icon(
+              Icons.shopping_cart,              
             ),
           )
         ],
