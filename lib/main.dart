@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:sushi_restaurant/layouts/intro.dart';
 import 'package:sushi_restaurant/layouts/menu.dart';
+import 'package:sushi_restaurant/models/shop.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider<ShopList>(
+      create: (BuildContext context) { 
+        return ShopList();
+      },
+      child: const MyApp()
+    )
+  );
 }
 
 class MyApp extends StatelessWidget {

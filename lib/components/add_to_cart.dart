@@ -10,6 +10,7 @@ class AddToCart extends StatefulWidget {
   
   final int index;
   final String price;
+  
   const AddToCart({
     super.key,
     required this.price,
@@ -18,22 +19,22 @@ class AddToCart extends StatefulWidget {
 }
 
 class _AddToCartState extends State<AddToCart> {
-  int amount = 0;
+  int quantity = 0;
 
   void increment() {
     setState(() {
-      amount++;
+      quantity++;
     });
   }
 
   void decrement() {
-    if (amount > 0) {
+    if (quantity > 0) {
       return setState(() {
-        amount--;
+        quantity--;
       });
     }
     setState(() {
-        amount = 0;
+        quantity = 0;
     });
   }
 
@@ -81,7 +82,7 @@ class _AddToCartState extends State<AddToCart> {
                     const SizedBox(width: 10),
                     
                      Text(
-                      "$amount",
+                      "$quantity",
                       style: const TextStyle(
                         color: Colors.white
                       ),
@@ -107,7 +108,10 @@ class _AddToCartState extends State<AddToCart> {
               ],
             ),
 
-            AddToCartButton(index: widget.index)
+            AddToCartButton(
+              index: widget.index,
+              quantity: quantity,
+            )
           ],
         ),
       ),

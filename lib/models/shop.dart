@@ -1,10 +1,11 @@
 // ShopList prototype
+import 'package:flutter/material.dart';
 import 'package:sushi_restaurant/models/menu_list.dart';
 
-class ShopList {
+class ShopList extends ChangeNotifier {
 
   // Menu List
-  final List<MenuList> _menus = [
+  List<MenuList> menus = [
     MenuList(
       name: 'More Sushis',
       price: '\$12.99',
@@ -36,7 +37,7 @@ class ShopList {
   ];
 
   // Customer Cart
-  final List<MenuList> _cart = [
+  List<MenuList> cart = [
     
   ];
 
@@ -47,13 +48,15 @@ class ShopList {
   // Add to cart
   void addToCart(MenuList food, int quantity) {
     for (var i = 0; i < quantity; i++) {
-      _cart.add(food);
+      cart.add(food);
+      notifyListeners();
     }
   }
   
   removeFromCart(MenuList food, int quantity) {
     for (var i = 0; i < quantity; i++) {
-      _cart.remove(food);
+      cart.remove(food);
+      notifyListeners();
     }
   }
 }
