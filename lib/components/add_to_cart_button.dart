@@ -52,6 +52,32 @@ class _AddToCartButtonState extends State<AddToCartButton> {
           ],
         ) 
       );
+    } else {
+      showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.red,
+          content: const Text(
+            "Please choose desired quantity",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white
+            ),
+          ),
+          actions: [
+            IconButton(
+              onPressed: () {
+                // Close dialog
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.done,
+                color: Colors.white
+              ),
+            ),
+          ],
+        ) 
+      );
     }
   }
 
