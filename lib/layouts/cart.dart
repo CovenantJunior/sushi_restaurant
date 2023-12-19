@@ -40,6 +40,7 @@ class _CartState extends State<Cart> {
             String imagePath = menu.imagePath;
             String rating = menu.rating;
             String desc = menu.desc;
+            int quantity = menu.quantity;
           
             return Padding(
               padding: const EdgeInsets.all(8.0),
@@ -54,7 +55,7 @@ class _CartState extends State<Cart> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            name,
+                            "${name} x ${quantity}",
                             style: const TextStyle(
                               color: Colors.white,
                               fontFamily: "DM Serif Display",
