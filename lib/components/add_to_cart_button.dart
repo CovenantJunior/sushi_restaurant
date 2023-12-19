@@ -1,35 +1,45 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sushi_restaurant/models/shop.dart';
 import 'package:sushi_restaurant/themes/colors.dart';
 
-class AddToCartButton extends StatelessWidget {
-  
+class AddToCartButton extends StatefulWidget {
+
+  @override
+  State<AddToCartButton> createState() => _AddToCartButtonState();
   final int index;
   final int quantity;
   
-  void addToCart() {
-    if (quantity > 0) {
-      final shop = context.read<ShopList>();
-      final menu = shop.menus;
-      shop.addToCart(menu[index], quantity);
-    }
-  }
-
   const AddToCartButton({
     super.key,
     required this.index,
     required this.quantity
   });
+}
+
+class _AddToCartButtonState extends State<AddToCartButton> {
+  void add(BuildContext context) {
+    print("hi");
+    if (widget.quantity > 0) {
+      final shop = context.read<ShopList>();
+      final menu = shop.menus;
+      shop.addToCart(menu[widget.index], widget.quantity);
+
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          content: Text("Item added successfully")
+        ) 
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10, 15, 10, 0),
       child: GestureDetector(
-        onTap: addToCart,
+        onTap: () => add(conte),
         child: Container(
           padding: const EdgeInsets.all(10.0),
           decoration: BoxDecoration(

@@ -7,9 +7,7 @@ import 'package:sushi_restaurant/models/shop.dart';
 void main() {
   runApp(
     ChangeNotifierProvider<ShopList>(
-      create: (BuildContext context) { 
-        return ShopList();
-      },
+      create: (context) => ShopList(),
       child: const MyApp()
     )
   );
