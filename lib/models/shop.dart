@@ -56,7 +56,7 @@ class ShopList extends ChangeNotifier {
     notifyListeners();
   }
   
-  removeFromCart(MenuList food {
+  removeFromCart(MenuList food) {
     cart.remove(food);
     notifyListeners();
   }

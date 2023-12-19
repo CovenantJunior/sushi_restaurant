@@ -16,6 +16,7 @@ class _CartState extends State<Cart> {
   Widget build(BuildContext context) {
     return Consumer<ShopList>(
       builder: (context, value, child) => Scaffold(
+        backgroundColor: primaryColor,
         appBar: AppBar(
           title: const Text(
             "My Cart",
@@ -27,6 +28,7 @@ class _CartState extends State<Cart> {
           centerTitle: true,
           backgroundColor: primaryColor,
           foregroundColor: Colors.white,
+          elevation: 0,
         ),
         body: ListView.builder(
           itemCount: value.cart.length,
@@ -42,6 +44,7 @@ class _CartState extends State<Cart> {
             return Padding(
               padding: const EdgeInsets.all(8.0),
               child: Card(
+                color: secondaryColor,
                 child: Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
@@ -52,8 +55,8 @@ class _CartState extends State<Cart> {
                         children: [
                           Text(
                             name,
-                            style: TextStyle(
-                              color: primaryColor,
+                            style: const TextStyle(
+                              color: Colors.white,
                               fontFamily: "DM Serif Display",
                               fontSize: 20
                             ),
@@ -63,8 +66,8 @@ class _CartState extends State<Cart> {
                           
                           Text(
                             price,
-                            style: TextStyle(
-                              color: primaryColor,
+                            style: const TextStyle(
+                              color: Colors.white
                             ),
                           ),
                         ],
@@ -74,9 +77,9 @@ class _CartState extends State<Cart> {
                         onPressed: () {
                           value.removeFromCart(value.cart[index]);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.delete_sweep,
-                          color: primaryColor,
+                          color: Colors.white
                         )
                       )
                     ],
