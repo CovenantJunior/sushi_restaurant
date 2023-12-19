@@ -31,7 +31,7 @@ class _CartState extends State<Cart> {
         body: ListView.builder(
           itemCount: value.cart.length,
           itemBuilder: (context, index) {
-            final MenuList menu = value.menus[index];
+            final MenuList menu = value.cart[index];
 
             String name = menu.name;
             String price = menu.price;

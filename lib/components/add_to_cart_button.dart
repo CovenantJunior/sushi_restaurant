@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sushi_restaurant/models/menu_list.dart';
 import 'package:sushi_restaurant/models/shop.dart';
 import 'package:sushi_restaurant/themes/colors.dart';
 
@@ -7,12 +8,12 @@ class AddToCartButton extends StatefulWidget {
 
   @override
   State<AddToCartButton> createState() => _AddToCartButtonState();
-  final int index;
+  final MenuList food;
   final int quantity;
   
   const AddToCartButton({
     super.key,
-    required this.index,
+    required this.food,
     required this.quantity
   });
 }
@@ -21,8 +22,7 @@ class _AddToCartButtonState extends State<AddToCartButton> {
   void add(BuildContext context) {
     if (widget.quantity > 0) {
       final shop = context.read<ShopList>();
-      final menu = shop.menus;
-      shop.addToCart(menu[widget.index], widget.quantity);
+      shop.addToCart(widget.food, widget.quantity);
 
       showDialog(
         context: context,

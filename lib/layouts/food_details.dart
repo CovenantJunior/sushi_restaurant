@@ -106,7 +106,7 @@ class FoodDetails extends StatelessWidget {
       ),
       bottomNavigationBar: AddToCart(
         price: food.price,
-        index: index
+        food: food
       ),
     );
   }
