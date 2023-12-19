@@ -43,27 +43,42 @@ class _CartState extends State<Cart> {
               padding: const EdgeInsets.all(8.0),
               child: Card(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  padding: const EdgeInsets.all(10.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        name,
-                        style: TextStyle(
-                          color: primaryColor,
-                          fontFamily: "DM Serif Display",
-                          fontSize: 20
-                        ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            name,
+                            style: TextStyle(
+                              color: primaryColor,
+                              fontFamily: "DM Serif Display",
+                              fontSize: 20
+                            ),
+                          ),
+                          
+                          const SizedBox(height: 10),
+                          
+                          Text(
+                            price,
+                            style: TextStyle(
+                              color: primaryColor,
+                            ),
+                          ),
+                        ],
                       ),
-                      
-                      const SizedBox(height: 10),
-                      
-                      Text(
-                        price,
-                        style: TextStyle(
+
+                      IconButton(
+                        onPressed: () {
+                          value.removeFromCart(value.cart[index]);
+                        },
+                        icon: Icon(
+                          Icons.delete_sweep,
                           color: primaryColor,
-                        ),
-                      ),
+                        )
+                      )
                     ],
                   ),
                 ),
