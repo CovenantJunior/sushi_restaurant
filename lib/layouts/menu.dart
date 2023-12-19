@@ -52,7 +52,9 @@ class _MenuState extends State<Menu> {
         backgroundColor: Colors.grey[300],
         actions: [
           IconButton(
-            onPressed: null,
+            onPressed: () {
+              Navigator.pushNamed(context, '/cart');
+            },
             icon: Icon(
               Icons.shopping_cart,
               color: primaryColor,
