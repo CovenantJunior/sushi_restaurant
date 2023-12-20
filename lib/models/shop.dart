@@ -51,8 +51,8 @@ class ShopList extends ChangeNotifier {
 
   // Add to cart
   void addToCart(MenuList food, int quantity) {
-    food.quantity = quantity;
     cart.add(food);
+    food.quantity = quantity;
     notifyListeners();
   }
   

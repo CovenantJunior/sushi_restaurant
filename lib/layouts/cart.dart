@@ -50,29 +50,43 @@ class _CartState extends State<Cart> {
                   padding: const EdgeInsets.all(10.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
+                      Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            "${name} x ${quantity}",
-                            style: const TextStyle(
-                              color: Colors.white,
-                              fontFamily: "DM Serif Display",
-                              fontSize: 20
-                            ),
+                          Image.asset(
+                            imagePath,
+                            height: 50,
                           ),
-                          
-                          const SizedBox(height: 10),
-                          
-                          Text(
-                            price,
-                            style: const TextStyle(
-                              color: Colors.white
-                            ),
+
+                          const SizedBox(width: 20),
+
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  "$name x $quantity",
+                                  style: const TextStyle(
+                                    color: Colors.white,
+                                    fontFamily: "DM Serif Display",
+                                    fontSize: 20
+                                  ),
+                                ),
+                                
+                                const SizedBox(height: 10),
+                                
+                                Text(
+                                  price,
+                                  style: const TextStyle(
+                                    color: Colors.white
+                                  ),
+                                ),
+                              ],
                           ),
                         ],
                       ),
+
 
                       IconButton(
                         onPressed: () {
