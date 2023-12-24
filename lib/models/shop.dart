@@ -51,6 +51,7 @@ class ShopList extends ChangeNotifier {
 
   // Add to cart
   void addToCart(MenuList food, int quantity) {
+    // Create a unique item with a unique item quantity
     MenuList newItem = MenuList(
         name: food.name,
         price: food.price,
