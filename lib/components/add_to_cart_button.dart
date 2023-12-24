@@ -32,7 +32,8 @@ class _AddToCartButtonState extends State<AddToCartButton> {
             "Item added successfully",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.white
+              color: Colors.white,
+              fontSize: 25,
             ),
           ),
           actions: [
