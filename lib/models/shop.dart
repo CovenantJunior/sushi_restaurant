@@ -51,8 +51,15 @@ class ShopList extends ChangeNotifier {
 
   // Add to cart
   void addToCart(MenuList food, int quantity) {
-    cart.add(food);
-    food.quantity = quantity;
+    MenuList newItem = MenuList(
+        name: food.name,
+        price: food.price,
+        imagePath: food.imagePath,
+        rating: food.rating,
+        desc: food.desc,
+        quantity: quantity,
+      );
+    cart.add(newItem);
     notifyListeners();
   }
   
