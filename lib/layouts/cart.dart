@@ -41,63 +41,108 @@ class _CartState extends State<Cart> {
             String rating = menu.rating;
             String desc = menu.desc;
             int quantity = menu.quantity;
+
+            void delete(BuildContext context, menu) {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  backgroundColor: primaryColor,
+                  content: const Text(
+                    "Delete Item?",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                      fontFamily: 'DM Serif Display',
+                    ),
+                  ),
+                  actions: [
+                    IconButton(
+                      onPressed: () {
+                        value.removeFromCart(menu);
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.done,
+                        color: Colors.white
+                      ),
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      icon: const Icon(
+                        Icons.cancel_outlined,
+                        color: Colors.white
+                      ),
+                    ),
+                  ],
+                ) 
+              );
+            }
           
             return Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Card(
-                color: secondaryColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            imagePath,
-                            height: 50,
-                          ),
-
-                          const SizedBox(width: 20),
-
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  "$name x $quantity",
-                                  style: const TextStyle(
-                                    color: Colors.white,
-                                    fontFamily: "DM Serif Display",
-                                    fontSize: 20
+              child: Dismissible(
+                key: Key(name),
+                onDismissed: (direction) async {
+                  delete(context, menu);
+                },
+                child: Card(
+                  color: secondaryColor,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              imagePath,
+                              height: 50,
+                            ),
+                
+                            const SizedBox(width: 20),
+                
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    "$name x $quantity",
+                                    style: const TextStyle(
+                                      color: Colors.white,
+                                      fontFamily: "DM Serif Display",
+                                      fontSize: 20
+                                    ),
                                   ),
-                                ),
-                                
-                                const SizedBox(height: 10),
-                                
-                                Text(
-                                  price,
-                                  style: const TextStyle(
-                                    color: Colors.white
+                                  
+                                  const SizedBox(height: 10),
+                                  
+                                  Text(
+                                    price,
+                                    style: const TextStyle(
+                                      color: Colors.white
+                                    ),
                                   ),
-                                ),
-                              ],
-                          ),
-                        ],
-                      ),
-
-
-                      IconButton(
-                        onPressed: () {
-                          value.removeFromCart(value.cart[index]);
-                        },
-                        icon: const Icon(
-                          Icons.delete_sweep,
-                          color: Colors.white
+                                ],
+                            ),
+                          ],
+                        ),
+                
+                
+                        IconButton(
+                          onPressed: () {
+                            delete(context, menu);
+                          },
+                          icon: const Icon(
+                            Icons.delete_sweep,
+                            color: Colors.white
+                          )
                         )
-                      )
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
