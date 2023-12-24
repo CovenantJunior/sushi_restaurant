@@ -33,7 +33,8 @@ class _AddToCartButtonState extends State<AddToCartButton> {
             textAlign: TextAlign.center,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 25,
+              fontSize: 20,
+              fontFamily: 'DM Serif Display',
             ),
           ),
           actions: [
