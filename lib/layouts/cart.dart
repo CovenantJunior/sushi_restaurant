@@ -38,8 +38,8 @@ class _CartState extends State<Cart> {
             String name = menu.name;
             String price = menu.price;
             String imagePath = menu.imagePath;
-            String rating = menu.rating;
-            String desc = menu.desc;
+            // String rating = menu.rating;
+            // String desc = menu.desc;
             int quantity = menu.quantity;
 
             void delete(BuildContext context, menu) {
@@ -85,8 +85,9 @@ class _CartState extends State<Cart> {
               padding: const EdgeInsets.all(8.0),
               child: Dismissible(
                 key: Key(name),
-                onDismissed: (direction) async {
+                confirmDismiss: (direction) async {
                   delete(context, menu);
+                  return null;
                 },
                 child: Card(
                   color: secondaryColor,
